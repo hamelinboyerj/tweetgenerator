@@ -81,27 +81,3 @@ Test are written with [unittest](https://docs.python.org/3/library/unittest.html
 ```
 python test/test.py
 ```
-
-I) What I want for username.py generator :
-
-1) UsernameID
-  - Possibility to choose the number of user to generated : command -h [generate 2K users]
-      How to achieve it :
-        Create a program that will:
-            -create a loop that randomizes the matching between last and first name until number of users is reached.
-              -in that loop, append 4 random numbers
-              - check for unicity of the UsernameID.
-
-2) Age
-    - Randomly assign an age (15-45) to each user
-    use a normal distribution
-
-3) Email
-    -
-
-
-FINAL : tweet.py générator//
-    - Let people generate tweet in a meaningful way/ predict human tweet generation? which criteria to use for this ?
-        For age in tweet : based on average country + normal distribution
-        For country of tweet location : based on density of population + normal distribution
-          - need a list of country.
