@@ -11,7 +11,7 @@ random.seed(314)
 name = open ('../data/original/names.csv')
 usersinfo = open ('../output/usersinfo.csv' , "w")
 readnames = csv.reader(name, delimiter = '\t')
-writenames = csv.writer(usersinfo)
+writenames = csv.writer(usersinfo, delimiter = ',', quotechar= '"')
 
 
 def main():
