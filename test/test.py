@@ -13,4 +13,4 @@ class TestConfig(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    print ("")
+    print ("The datasets used to generate the content are correctly located")
