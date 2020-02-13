@@ -14,13 +14,11 @@ writer = csv.writer(usercountry)
 countriestuple = tuple(countriesreadercsv)
 countrieslist = [x[0] for x in countriestuple]
 
-userstuple = tuple(usersreadercsv)
-userslist = [x[0] for x in userstuple]
 
 
 def main():
-    for row in userstuple:
-        table_usercountry = [str(userslist[0])] + [str(random.choice(countrieslist))]
+    for row in usersreadercsv:
+        table_usercountry = [str(row[0])] + [str(random.choice(countrieslist))]
         writer.writerow(table_usercountry)
 
 
