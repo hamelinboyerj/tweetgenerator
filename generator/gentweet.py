@@ -1,21 +1,34 @@
 import csv
 import os
-import tempfile
+import copy
+import random
+from io import open
 
-namelist = open ('../data/names.csv')
-article = open ('/home/juleshamelinboyer/nytimesarticle/nytimesarticle.csv')
-out_file = open ('../data/tweetuser.csv', "w")
-nameread = namelist.readlines()
-articleread = article.readlines()
-writer = csv.writer(out_file, delimiter= ',')
 ## Similarly as gencountry, we use a counter to count the number of articles
 ## constructed
-i = 1
-while i < len(nameread):
-        for row in zip(nameread, articleread):
-            writer.writerow(row)
-            i += 1
-            print(i)
-close(namelist)
-close(article)
-close(out_file)
+
+
+
+def main():
+    userid_opener = open ('../output/usersinfo.csv', encoding = 'latin1')
+    userid_reader = csv.reader(userid_opener, delimiter = ',')
+
+    article = open ('/home/juleshamelinboyer/nytimesarticle/samplenytimes.csv', encoding='latin1', errors = 'ignore')
+    articlecsvreader = csv.reader(article, delimiter = '\t')
+
+    out_file = open ('../output/tweetuser.csv', "w")
+    writer = csv.writer(out_file)
+
+    articlelist = list(articlecsvreader)
+
+    for row in userid_reader:
+        userid_tweet = [''.join( [str(row[0])] + [str(random.choice(articlelist))] ) ]
+        writer.writerow(userid_tweet)
+
+    userid_opener.close()
+    article.close()
+    out_file.close()
+
+
+if __name__== "__main__" :
+    main()
