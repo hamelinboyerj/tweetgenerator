@@ -1,6 +1,11 @@
 import unittest
 import os
 import csv
+import sys
+import unittest
+
+sys.path.append('../generator')
+
 
 
 def get_config():
@@ -14,10 +19,9 @@ def get_newfirstname() :
     firstname['firstname_path'] = './data/original/firstname.txt'
     return firstname
 
-def get_newlastname():
-    lastname = {}
-    lastname['lastname_path'] = './data/original/lastname.txt'
-    return lastname
+def get_username():
+    username = {}
+    username['username_path'] = '../output/usersinfo.csv'
 
 def get_newtweet() :
     newtweet = {}
